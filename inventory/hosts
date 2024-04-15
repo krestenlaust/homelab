@@ -1,0 +1,4 @@
+all:
+  hosts:
+    raspberrypi:
+      ansible_host: <raspberry_pi_ip_address>
