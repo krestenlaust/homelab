@@ -1,0 +1,4 @@
+# defaults/main.yml
+mount_point: /mnt/drive
+device_name: /dev/sda1
+filesystem_type: ext4
