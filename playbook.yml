@@ -14,3 +14,4 @@
         symlink_path: /data/media
         mount_owner: automator
         mount_group: extmedia
+    - hadrienpatte.jellyfin
