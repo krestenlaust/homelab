@@ -1,0 +1,16 @@
+---
+- name: Ensure systemd watchdog is enabled and configured
+  lineinfile:
+    path: /etc/systemd/system.conf
+    regexp: '^#?RuntimeWatchdogSec='
+    line: "RuntimeWatchdogSec={{ runtime_watchdog_sec }}"
+    state: present
+  notify: Reload systemd configuration
+
+- name: Ensure systemd reboot watchdog is configured
+  lineinfile:
+    path: /etc/systemd/system.conf
+    regexp: '^#?RebootWatchdogSec='
+    line: "RebootWatchdogSec={{ reboot_watchdog_sec }}"
+    state: present
+  notify: Reload systemd configuration

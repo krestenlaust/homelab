@@ -5,3 +5,4 @@
   roles:
     - ntp
     - artis3n.tailscale
+    - systemd_watchdog

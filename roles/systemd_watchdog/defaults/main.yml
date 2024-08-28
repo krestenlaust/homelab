@@ -1,0 +1,3 @@
+---
+runtime_watchdog_sec: '15'
+reboot_watchdog_sec: '2min'
