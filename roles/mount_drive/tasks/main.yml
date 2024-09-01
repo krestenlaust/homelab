@@ -51,7 +51,7 @@
 
 - name: Create a symlink from the mount point to the symlink path
   ansible.builtin.file:
-    src: "{{ mount_point }}"
+    src: "{{ mount_point }}{{ '/' + mount_subpath if mount_subpath is defined else '' }}"
     dest: "{{ symlink_path }}"
     state: link
     owner: "{{ mount_owner }}"

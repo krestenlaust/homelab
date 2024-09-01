@@ -9,6 +9,7 @@
     - role: mount_drive
       vars:
         mount_point: /mnt/drive
+        mount_subpath: Underholdning
         device_name: /dev/sda1
         filesystem_type: exfat
         symlink_path: /data/media
