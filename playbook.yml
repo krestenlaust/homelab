@@ -16,3 +16,7 @@
         mount_owner: automator
         mount_group: extmedia
     - hadrienpatte.jellyfin
+    - role: sagikazarmark.qbittorrent_nox
+      vars:
+        qbittorrent_nox_user_groups:
+          - extmedia
