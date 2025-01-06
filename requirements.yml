@@ -1,3 +1,4 @@
 - src: artis3n.tailscale
-- src: hadrienpatte.jellyfin
 - src: sagikazarmark.qbittorrent_nox
+- src: hadrienpatte.jellyfin
+- src: hadrienpatte.self_signed_certificate
