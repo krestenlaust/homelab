@@ -23,7 +23,7 @@
     path: "{{ mount_point }}"
     src: "{{ device_name }}"
     fstype: "{{ filesystem_type }}"
-    opts: "defaults,uid={{ mount_owner }},gid={{ mount_group }},umask=0022"
+    opts: "defaults,uid={{ mount_owner }},gid={{ mount_group }},umask={{ mount_umask }}"
     state: "mounted"
     backup: yes
 
@@ -32,7 +32,7 @@
     path: "{{ mount_point }}"
     src: "{{ device_name }}"
     fstype: "{{ filesystem_type }}"
-    opts: "defaults,uid={{ mount_owner }},gid={{ mount_group }},umask=0022"
+    opts: "defaults,uid={{ mount_owner }},gid={{ mount_group }},umask={{ mount_umask }}"
     state: mounted
 
 - name: Ensure the target directory for symlink exists
