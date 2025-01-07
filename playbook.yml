@@ -15,7 +15,10 @@
         symlink_path: /data/media
         mount_owner: automator
         mount_group: extmedia
-    - hadrienpatte.jellyfin
+    - role: hadrienpatte.jellyfin
+      vars:
+        jellyfin_FQDN:
+          - raspberrypi
     - role: sagikazarmark.qbittorrent_nox
       vars:
         qbittorrent_nox_user_groups:
