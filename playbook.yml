@@ -20,3 +20,4 @@
       vars:
         qbittorrent_nox_user_groups:
           - extmedia
+    - install_utilities

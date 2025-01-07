@@ -1,0 +1,9 @@
+---
+- name: install various utilities
+  apt:
+    name:
+      - aria2
+      - neovim
+      - screen
+    state: present
+    update_cache: yes
