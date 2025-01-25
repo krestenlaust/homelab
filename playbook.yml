@@ -23,4 +23,6 @@
       vars:
         qbittorrent_nox_user_groups:
           - extmedia
+    - role: nickjj.docker
+      tags: ["docker"]
     - install_utilities
