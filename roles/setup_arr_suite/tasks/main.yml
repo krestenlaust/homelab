@@ -1,0 +1,17 @@
+---
+# tasks file for setup_arr_suite
+- name: Ensure target folder exists
+  ansible.builtin.file:
+    path: "/opt/arr-suite"
+    state: directory
+    mode: '0755'
+
+- name: Copy docker-compose file
+  template:
+    src: docker-compose.yml.j2
+    dest: /opt/arr-suite/docker-compose.yml
+
+- name: Start *arr-Suite containers
+  community.docker.docker_compose_v2:
+    project_src: /opt/arr-suite
+    state: present

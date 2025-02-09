@@ -23,4 +23,28 @@
       vars:
         qbittorrent_nox_user_groups:
           - extmedia
+    - role: nickjj.docker
+      tags: ["docker"]
+    - role: setup_arr_suite
+      vars:
+        timezone: "Europe/Copenhagen"
+
+        # PUID and PGID for each service
+        bazarr_puid: 995
+        bazarr_pgid: 1001
+        prowlarr_puid: 1000
+        prowlarr_pgid: 1001
+        radarr_puid: 995
+        radarr_pgid: 1001
+        sonarr_puid: 995
+        sonarr_pgid: 1001
+
+        # Volume paths
+        bazarr_config: "/data/media/Apps/bazarr/config"
+        prowlarr_config: "/data/media/Apps/prowlarr/config"
+        radarr_config: "/data/media/Apps/radarr/config"
+        sonarr_config: "/data/media/Apps/sonarr/config"
+        tv_shows_path: "/data/media/Serier"
+        movies_path: "/data/media/Film"
+        downloads_path: "/home/qbtuser/Downloads"
     - install_utilities
