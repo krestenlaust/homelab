@@ -1,0 +1,6 @@
+---
+# tasks file for setup_arr_suite
+- name: Template docker-compose file
+  template:
+    src: docker-compose.yml.j2
+    dest: /opt/arr-suite/docker-compose.yml

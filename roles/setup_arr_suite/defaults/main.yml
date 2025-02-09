@@ -1,0 +1,7 @@
+---
+# defaults file for setup_arr_suite
+
+bazarr_port: 6767
+prowlarr_port: 9696
+radarr_port: 7878
+sonarr_port: 8989
