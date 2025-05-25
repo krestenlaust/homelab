@@ -48,3 +48,7 @@
         movies_path: "/data/media/Film"
         downloads_path: "/home/qbtuser/Downloads"
     - install_utilities
+    - role: sebdanielsson.cloudflared
+      vars:
+        cloudflare_tunnel_enable: true
+      state: present
