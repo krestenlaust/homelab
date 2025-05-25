@@ -1,16 +1,28 @@
 ---
-- name: Ensure target folder exists
+- name: Ensure auth-suite folder exists
   ansible.builtin.file:
     path: "/opt/auth-suite"
     state: directory
     mode: '0755'
 
-- name: Copy docker-compose file
+- name: Create docker-compose file
   template:
     src: docker-compose.yml.j2
     dest: /opt/auth-suite/docker-compose.yml
 
-- name: Start OpenLDAP using Docker Compose
+- name: Ensure Authelia folder exists
+  ansible.builtin.file:
+    path: "/opt/auth-suite/authelia"
+    state: directory
+    mode: '0755'
+
+- name: Create Authelia configuration file
+  template:
+    src: authelia.yml.j2
+    dest: /opt/auth-suite/authelia/configuration.yml  # Change this to your desired path
+  become: yes  # Use this if you need elevated privileges
+
+- name: Start OpenLDAP and Authelia using Docker Compose
   community.docker.docker_compose_v2:
     project_src: /opt/auth-suite
     state: present

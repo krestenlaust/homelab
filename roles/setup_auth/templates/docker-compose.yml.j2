@@ -14,6 +14,26 @@ services:
       - ldap_data:/var/lib/ldap
       - ldap_config:/etc/ldap/slapd.d
 
+  authelia:
+    image: authelia/authelia:latest
+    container_name: authelia
+    environment:
+      - JWT_SECRET={{ authelia_jwt_secret }}
+      - SERVER_HOST={{ authelia_server_host }}
+      - SERVER_PORT={{ authelia_server_port }}
+      - LDAP_URL={{ authelia_ldap_url }}
+      - LDAP_BASE_DN={{ authelia_ldap_base_dn }}
+      - LDAP_USER_DN={{ authelia_ldap_user_dn }}
+      - LDAP_GROUP_DN={{ authelia_ldap_group_dn }}
+      - LDAP_BIND_DN={{ authelia_ldap_bind_dn }}
+      - LDAP_BIND_PASSWORD={{ authelia_ldap_bind_password }}
+    ports:
+      - "9091:9091"  # Authelia
+    volumes:
+      - ./authelia:/config  # Mount a local directory for Authelia config
+    depends_on:
+      - ldap
+
 volumes:
   ldap_data:
   ldap_config:
