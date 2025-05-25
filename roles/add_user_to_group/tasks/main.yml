@@ -1,0 +1,7 @@
+---
+- name: adding jellyfin user to group extmedia
+  user:
+    name: "{{ user }}"
+    groups: "{{ group }}"
+    append: yes
+  become: yes
