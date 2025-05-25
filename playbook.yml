@@ -20,6 +20,10 @@
       vars:
         jellyfin_FQDN:
           - raspberrypi
+    - role: add_user_to_group
+      vars:
+        user: jellyfin
+        group: extmedia
     - role: sagikazarmark.qbittorrent_nox
       vars:
         qbittorrent_nox_user_groups:
