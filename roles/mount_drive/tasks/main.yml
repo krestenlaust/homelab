@@ -26,14 +26,10 @@
     opts: "defaults,uid={{ mount_owner }},gid={{ mount_group }},umask={{ mount_umask }}"
     state: "mounted"
     backup: yes
+  notify: Reboot to mount fstab drive
 
-- name: Ensure the external drive is mounted
-  ansible.posix.mount:
-    path: "{{ mount_point }}"
-    src: "{{ device_name }}"
-    fstype: "{{ filesystem_type }}"
-    opts: "defaults,uid={{ mount_owner }},gid={{ mount_group }},umask={{ mount_umask }}"
-    state: mounted
+- name: Flush handlers to ensure drive mounted
+  meta: flush_handlers
 
 - name: Ensure the target directory for symlink exists
   ansible.builtin.file:
