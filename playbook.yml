@@ -6,6 +6,7 @@
     - ntp
     - artis3n.tailscale
     - systemd_watchdog
+    - install_utilities
     - role: mount_drive
       vars:
         mount_point: /mnt/drive
@@ -53,4 +54,3 @@
         tv_shows_path: "/data/media/Serier"
         movies_path: "/data/media/Film"
         downloads_path: "/home/qbtuser/Downloads"
-    - install_utilities
