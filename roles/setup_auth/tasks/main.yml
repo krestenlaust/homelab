@@ -1,0 +1,16 @@
+---
+- name: Ensure target folder exists
+  ansible.builtin.file:
+    path: "/opt/auth-suite"
+    state: directory
+    mode: '0755'
+
+- name: Copy docker-compose file
+  template:
+    src: docker-compose.yml.j2
+    dest: /opt/auth-suite/docker-compose.yml
+
+- name: Start OpenLDAP using Docker Compose
+  community.docker.docker_compose_v2:
+    project_src: /opt/auth-suite
+    state: present

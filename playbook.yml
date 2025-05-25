@@ -52,6 +52,12 @@
         tv_shows_path: "/data/media/Serier"
         movies_path: "/data/media/Film"
         downloads_path: "/home/qbtuser/Downloads"
+    - role: setup_auth
+      vars:
+        ldap_organisation: "Krestens Homelab"
+        ldap_domain: "kresten.xyz"
+        ldap_admin_password: "adminpassword"
+        ldap_config_password: "configpassword"
     - role: sebdanielsson.cloudflared
       vars:
         cloudflare_tunnel_enable: true

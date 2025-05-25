@@ -1,0 +1,5 @@
+---
+ldap_organisation: "Krestens Homelab"
+ldap_domain: "kresten.xyz"
+ldap_admin_password: "adminpassword"
+ldap_config_password: "configpassword"
