@@ -3,3 +3,4 @@
 - src: hadrienpatte.jellyfin
 - src: hadrienpatte.self_signed_certificate
 - src: nickjj.docker
+- src: sebdanielsson.cloudflared
