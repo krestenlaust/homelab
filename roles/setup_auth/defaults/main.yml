@@ -6,6 +6,7 @@ ldap_config_password: "configpassword"
 
 authelia_server_host: "0.0.0.0"
 authelia_server_port: "9091"
+authelia_ldap_url: "ldap://ldap"
 authelia_ldap_base_dn: "dc=kresten,dc=xyz"
 authelia_ldap_user_dn: "ou=users,dc=kresten,dc=xyz"
 authelia_ldap_group_dn: "ou=groups,dc=kresten,dc=xyz"

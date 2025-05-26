@@ -11,11 +11,7 @@ log:
   level: info
 totp:
   disable: false
-  algorithm: sha1
-  digits: 6
-  period: 30
   skew: 1
-  secret_size: 32
 identity_validation:
   reset_password:
     jwt_secret: "{{ authelia_jwt_secret }}"  # Replace with a secure JWT secret
