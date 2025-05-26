@@ -29,6 +29,7 @@ authentication_backend:
       display_name: displayName
       group_name: cn
       mail: mail
+    base_dn: "{{ authelia_ldap_base_dn }}"
     additional_users_dn: ou=users
     users_filter: "(&({username_attribute}={input})(objectClass=person))"
     additional_groups_dn: ou=groups
@@ -39,8 +40,7 @@ authentication_backend:
 access_control:
   default_policy: one_factor  # Set to 'two_factor' or 'one_factor'
 session:
-  name: authelia_session
-  secret: 'abc'
+  secret: "{{ authelia_session_secret }}"
   expiration: 1h
   inactivity: 5m
   remember_me: 1M
