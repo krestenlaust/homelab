@@ -39,7 +39,7 @@ services:
     volumes:
       - {{ radarr_config }}:/config
       - {{ movies_path }}:/movies
-      - {{ downloads_path }}:/home/qbtuser/Downloads
+      - {{ downloads_path }}:{{ downloads_path }}
     restart: unless-stopped
 
   sonarr:
@@ -54,6 +54,6 @@ services:
     volumes:
       - {{ sonarr_config }}:/config
       - {{ tv_shows_path }}:/tv
-      - {{ downloads_path }}:/home/qbtuser/Downloads
+      - {{ downloads_path }}:{{ downloads_path }}
     restart: unless-stopped
     privileged: true

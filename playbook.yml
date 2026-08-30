@@ -51,7 +51,7 @@
         sonarr_config: "/data/media/Apps/sonarr/config"
         tv_shows_path: "/data/media/Serier"
         movies_path: "/data/media/Film"
-        downloads_path: "/home/qbtuser/Downloads"
+        downloads_path: "/data/media/Downloads/qbittorrent"
     - role: setup_auth
       vars:
         ldap_organisation: "Krestens Homelab"
